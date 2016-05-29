@@ -78,5 +78,12 @@ namespace GearSharp
             
         }
 
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            inputOriginalSize.Text = "";
+            inputNewSize.Text = "";
+            inputRatio.Text = "";
+            outputNewRatio.Text = "";
+        }
     }
 }

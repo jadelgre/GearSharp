@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.inputRatio = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.outputNewRatio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.inputOriginalSize.Name = "inputOriginalSize";
             this.inputOriginalSize.Size = new System.Drawing.Size(100, 20);
             this.inputOriginalSize.TabIndex = 0;
-            this.inputOriginalSize.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.inputOriginalSize.TextChanged += new System.EventHandler(this.inputOriginalSize_TextChanged);
             // 
             // inputNewSize
             // 
@@ -85,13 +85,13 @@
             this.inputRatio.TabIndex = 6;
             this.inputRatio.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox4
+            // outputNewRatio
             // 
-            this.textBox4.Location = new System.Drawing.Point(48, 209);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.outputNewRatio.Location = new System.Drawing.Point(48, 209);
+            this.outputNewRatio.Name = "outputNewRatio";
+            this.outputNewRatio.ReadOnly = true;
+            this.outputNewRatio.Size = new System.Drawing.Size(100, 20);
+            this.outputNewRatio.TabIndex = 7;
             // 
             // label3
             // 
@@ -132,14 +132,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.outputNewRatio);
             this.Controls.Add(this.inputRatio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inputNewSize);
             this.Controls.Add(this.inputOriginalSize);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "GearSharp";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +152,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox inputRatio;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox outputNewRatio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;

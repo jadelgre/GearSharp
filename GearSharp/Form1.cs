@@ -19,38 +19,44 @@ namespace GearSharp
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("The original tire diameter in inches");
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("The new tire diameter in inches");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Boolean inputsValid = true;
+
             Decimal originalSize;
-            if(!decimal.TryParse(inputOriginalSize.Text, out originalSize))
+            if(!decimal.TryParse(inputOriginalSize.Text, out originalSize) || originalSize == 0)
             {
+                inputsValid = false;
                 MessageBox.Show("You must enter a valid original size!");
             }
 
             Decimal newSize;
-            if (!decimal.TryParse(inputNewSize.Text, out newSize))
+            if (!decimal.TryParse(inputNewSize.Text, out newSize) || newSize == 0)
             {
+                inputsValid = false;
                 MessageBox.Show("You must enter a valid new size!");
             }
 
             Decimal originalRatio;
-            if (!decimal.TryParse(inputRatio.Text, out originalRatio))
+            if (!decimal.TryParse(inputRatio.Text, out originalRatio) || originalRatio == 0)
             {
+                inputsValid = false;
                 MessageBox.Show("You must enter a valid gear ratio!");
             }
             // (new Size / old size) X original ratio
-
-            Decimal newRatio = (newSize / originalSize) * originalRatio;
-            outputNewRatio.Text = newRatio.ToString("#.##"); // Convert to string with 2 decimal places
+            if (inputsValid)
+            {
+                Decimal newRatio = (newSize / originalSize) * originalRatio;
+                outputNewRatio.Text = newRatio.ToString("#.##"); // Convert to string with 2 decimal places
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -60,7 +66,7 @@ namespace GearSharp
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("The original differential gear ratio in the form of X.XX");
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

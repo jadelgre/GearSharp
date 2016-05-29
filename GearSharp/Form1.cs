@@ -32,25 +32,26 @@ namespace GearSharp
             Boolean inputsValid = true;
 
             Decimal originalSize;
-            if(!decimal.TryParse(inputOriginalSize.Text, out originalSize) || originalSize == 0)
+            if(!decimal.TryParse(inputOriginalSize.Text, out originalSize) || originalSize == 0 || originalSize < 0)
             {
                 inputsValid = false;
                 MessageBox.Show("You must enter a valid original size!");
             }
 
             Decimal newSize;
-            if (!decimal.TryParse(inputNewSize.Text, out newSize) || newSize == 0)
+            if (!decimal.TryParse(inputNewSize.Text, out newSize) || newSize == 0 || newSize < 0)
             {
                 inputsValid = false;
                 MessageBox.Show("You must enter a valid new size!");
             }
 
             Decimal originalRatio;
-            if (!decimal.TryParse(inputRatio.Text, out originalRatio) || originalRatio == 0)
+            if (!decimal.TryParse(inputRatio.Text, out originalRatio) || originalRatio == 0 || originalRatio < 0)
             {
                 inputsValid = false;
                 MessageBox.Show("You must enter a valid gear ratio!");
             }
+         
             // (new Size / old size) X original ratio
             if (inputsValid)
             {
